@@ -1,0 +1,28 @@
+.card {
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px 35px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.image {
+    background-color: grey;
+    border: 1px solid black;
+    padding: 20px 35px;
+}
+
+.editBut {
+    background-color: #e8a87c;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    color: black;
+    position: left;
+  }

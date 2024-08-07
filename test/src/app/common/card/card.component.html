@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="container">
+        <div class="row">
+            <div class="col-10">
+                <div class="Date">{{ getFormattedDate() }}</div>
+                <p class="DescriptionsCol" [innerHTML]="getText()"></p>
+            </div>
+            <div class="col-2">
+                <div>
+                    <button class="close-button" (click)="onDelete()">×</button>
+                </div>
+                <div class="image">image</div>
+                <div>
+                    <button class="editBut" (click)="onEdit()">Изменить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

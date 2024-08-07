@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row createBtn" *ngIf="!showCreateForm">
+        <div class="col-2">
+            <button (click)="toggleCreateForm()">Создать запись</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="showCreateForm">
+        <div class="form col-12">
+            <div id="Descriptions"></div>
+        </div>
+    </div>
+    <div class="row" *ngIf="showCreateForm">
+        <div class="col-2">
+            <button (click)="saveContent(); toggleCreateForm()">
+                {{ editingKey ? 'Сохранить изменения' : 'Сохранить запись' }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12" *ngFor="let data of allData">
+            <app-card [data]="data" (delete)="delContent($event)" (edit)="editContent($event)"></app-card>
+        </div>
+    </div>
+</div>
