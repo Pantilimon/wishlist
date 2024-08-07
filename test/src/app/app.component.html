@@ -1,9 +1,15 @@
+<!-- Главный компонент - "форма" добавления новых записей. Для красоты добавлены доп стили бутстрап -->
+
 <div class="container">
+
+    <!-- Кнопка созадняи запсии, к ней добавлен обработчик события (см app.component.ts) -->
     <div class="row createBtn" *ngIf="!showCreateForm">
         <div class="col-2">
             <button (click)="toggleCreateForm()">Создать запись</button>
         </div>
     </div>
+
+<!-- Сама форма (editor.service.ts подключен к Descriptions) а так де доп опбаботки кликеров-->
     <div class="row" *ngIf="showCreateForm">
         <div class="form col-12">
             <div id="Descriptions"></div>
@@ -17,7 +23,7 @@
         </div>
     </div>
 </div>
-
+<!-- Список задач-->
 <div class="container">
     <div class="row">
         <div class="col-12" *ngFor="let data of allData">

@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 @Injectable({
   providedIn: 'root'
 })
-export class EditorService {
+export class EditorService { 
   private editor: EditorJS | null = null;
 
   constructor() { }
-
+  //метод инициализации эдитора
   initEditor(): void {
     this.editor = new EditorJS({
       minHeight: 0,
@@ -19,7 +19,7 @@ export class EditorService {
       }
     });
   }
-
+ // Данные, полученные из эдитора, сохраняем  в localStorage
   async saveContent(): Promise<void> {
     if (this.editor) {
       const uniqueId = uuidv4(); // Генерация уникального идентификатора
@@ -31,6 +31,8 @@ export class EditorService {
       localStorage.setItem(uniqueId, JSON.stringify(dataWithTimestamp));
     }
   }
+
+  //метод. Обновляем данные, так же новые данные получаем из editor
   async updateContent(key: string): Promise<void> {
     if (this.editor) {
       const outputData = await this.editor.save();
@@ -41,7 +43,7 @@ export class EditorService {
       localStorage.setItem(key, JSON.stringify(dataWithTimestamp));
     }
   }
-
+  
   getAllKeys(): string[] {
     return Object.keys(localStorage);
   }
